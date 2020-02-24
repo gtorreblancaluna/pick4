@@ -30,6 +30,7 @@
           <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="24"> <span>24</span></label>
           <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="25"> <span>25</span></label>
           <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="26"> <span>26</span></label>
+          <a href="javascript:void(0)" class="clean-game" @click="cleanGame($event)">Limpiar</a>
         </div>
     </div>
 <!--    end ticket-->
@@ -61,6 +62,7 @@
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="24"> <span>24</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="25"> <span>25</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="26"> <span>26</span></label>
+        <a href="javascript:void(0)" class="clean-game" @click="cleanGame($event)">Limpiar</a>
       </div>
     </div>
 <!--    end ticket-->
@@ -92,6 +94,7 @@
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="24"> <span>24</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="25"> <span>25</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="26"> <span>26</span></label>
+        <a href="javascript:void(0)" class="clean-game" @click="cleanGame($event)">Limpiar</a>
       </div>
     </div>
     <!--    end ticket-->
@@ -123,9 +126,11 @@
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="24"> <span>24</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="25"> <span>25</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="26"> <span>26</span></label>
+        <a href="javascript:void(0)" class="clean-game" @click="cleanGame($event)">Limpiar</a>
       </div>
     </div>
     <!--    end ticket-->
+
 
 
     <div id="summary-game">
@@ -134,6 +139,7 @@
       <div>2: {{ticketTwo}}</div>
       <div>3: {{ticketThree}}</div>
       <div>4: {{ticketFour}}</div>
+
     </div>
 
 
@@ -163,7 +169,13 @@ export default {
   computed:{
 
   },
+  filters:{
+
+  },
   methods:{
+    sortedList : function(array){
+      return array.sort(function(a, b){return a-b});
+    },
     checkMax : function (event) {
       let $game = event.currentTarget.closest('.game');
       let numOfChecked = $game.querySelectorAll( 'input[name="number"]:checked' ).length;
@@ -172,19 +184,27 @@ export default {
       if(event.currentTarget.checked && numOfChecked > this.maxCombination){
         event.currentTarget.checked = false;
       }else if (!event.currentTarget.checked){
-        this.enabledOrDisabled($game,false);
-      }else if ( numOfChecked == this.maxCombination){
         this.enabledOrDisabled($game,true);
+      }else if ( numOfChecked == this.maxCombination){
+        this.enabledOrDisabled($game,false);
       }
     },
     enabledOrDisabled : function ($game,enabled) {
       let array = $game.querySelectorAll('input[name="number"]:not( :checked )');
       array.forEach(function (value,index,listObject) {
         if(enabled) {
-          value.closest( 'label.box' ).classList.add( 'disabled' );
-        }else{
           value.closest('label.box').classList.remove('disabled');
+        }else{
+          value.closest( 'label.box' ).classList.add( 'disabled' );
         }
+      })
+    },
+    cleanGame : function (event) {
+      let $game = event.currentTarget.closest('.game');
+      let array = $game.querySelectorAll('input[name="number"]');
+      array.forEach(function (value,index,listObject) {
+        value.checked = false;
+        value.closest('label.box').classList.remove('disabled');
       })
     }
   }
@@ -209,5 +229,7 @@ export default {
   .game input[type="checkbox"] { display: none; }
   .game .disabled { cursor:default; background-color: transparent; border-radius: 14px;}
   .game .disabled span{ color: #b9b9b9;}
+
+  .clean-game{text-decoration:none;color: #000;}
 
 </style>
