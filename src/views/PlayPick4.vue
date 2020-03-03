@@ -147,10 +147,12 @@
 </template>
 
 <script>
+import GetInitialGameService from '@/services/GetInitialGameService'
+
 export default {
   name: 'PlayPick4',
   components: {
-
+    GetInitialGameService
   },
   data(){
     return{
@@ -158,11 +160,26 @@ export default {
       ticketTwo:[],
       ticketThree:[],
       ticketFour:[],
-      maxCombination:4
+      maxCombination:4,
+      data:{
+        userName:"email@aganar.com",
+        token:"adsnjibhuvg23by4236748",
+        url:"www.aganar.com.mx",
+        gameCode:10
+      }
     }
   },
   mounted() {
+    GetInitialGameService.getInitialGame(this.data)
+    .then(
+      response => {
+            console.log(response)
+      }).catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
 
+      })
   },
   created() {
   },
