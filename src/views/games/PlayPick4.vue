@@ -1,9 +1,26 @@
 <template>
   <div class="pick4">
-    <h1>Play pick4</h1>
+    <div id="header-game">
+      <div >
+        <img src="../../assets/games/image-pick.jpg" style="height: 80px;float: left;">
+      </div>
+      <div style="padding-right: 160px;">
+        <h2><strong>$ 5,000,000</strong></h2>
+        <h5>BOLSA ACUMULADA</h5>
+      </div>
+      <div>
+        <span>TOTAL: <span id="total-game"></span></span>
+      </div>
+      <div>
+        <span class="custom-button" @click="payGame">PAGAR CON CE</span>
+      </div>
+    </div>
+
+    <div id="content-game">
 
     <div class="ticket">
         <div class="game">
+          <div class="id-game">A<div class="image-random" @click="randomGame($event)"></div></div>
           <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="1"> <span>1</span></label>
           <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="2"> <span>2</span></label>
           <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="3"> <span>3</span></label>
@@ -36,6 +53,7 @@
 <!--    end ticket-->
     <div class="ticket">
       <div class="game">
+        <div class="id-game">B<div class="image-random" @click="randomGame($event)"></div></div>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="1"> <span>1</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="2"> <span>2</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="3"> <span>3</span></label>
@@ -68,6 +86,7 @@
 <!--    end ticket-->
     <div class="ticket">
       <div class="game">
+        <div class="id-game">C<div class="image-random" @click="randomGame($event)"></div></div>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="1"> <span>1</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="2"> <span>2</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="3"> <span>3</span></label>
@@ -100,6 +119,7 @@
     <!--    end ticket-->
     <div class="ticket">
       <div class="game">
+        <div class="id-game">D<div class="image-random" @click="randomGame($event)"></div></div>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="1"> <span>1</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="2"> <span>2</span></label>
         <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="3"> <span>3</span></label>
@@ -130,18 +150,7 @@
       </div>
     </div>
     <!--    end ticket-->
-
-
-
-    <div id="summary-game">
-      <h5>summary game</h5>
-      <div>1: {{ticketOne}}</div>
-      <div>2: {{ticketTwo}}</div>
-      <div>3: {{ticketThree}}</div>
-      <div>4: {{ticketFour}}</div>
-
-    </div>
-
+    </div> <!-- end content game -->
 
   </div>
 </template>
@@ -161,11 +170,13 @@ export default {
       ticketThree:[],
       ticketFour:[],
       maxCombination:4,
+      maxNumber:26,
       data:{
         userName:"email@aganar.com",
         token:"adsnjibhuvg23by4236748",
         url:"www.aganar.com.mx",
-        gameCode:10
+        gameCode:10,
+        costPerTicket:10
       }
     }
   },
@@ -223,11 +234,53 @@ export default {
         value.checked = false;
         value.closest('label.box').classList.remove('disabled');
       })
+    },
+    payGame : function () {
+      alert("ready to pay game")
+    },
+    randomGame : function (event) {
+      console.log("in random game")
+      let $game = event.currentTarget.closest('.game');
+      this.cleanGame(event);
+      let min = 1, max = this.maxNumber, i = 0;
+      while( i < this.maxCombination ) {
+        let randomNum = Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+        let $boxNumber = $game.querySelectorAll( 'input[name="number"]' );
+
+        let $box = this.getBoxByValue($boxNumber,randomNum);
+
+        if( !$box.checked ) {
+          $box.checked = true;
+          i++;
+        }
+      }
+      this.addClassDisabled($game);
+    },
+    addClassDisabled : function($game){
+      let array = $game.querySelectorAll('input[name="number"]');
+      array.forEach(function (value,index) {
+        if(!value.checked){
+          value.closest('label.box').classList.add('disabled');
+        }
+
+      })
+    },
+    getBoxByValue : function ($boxNumber,randomNum) {
+      for(let i = 0 ; i<$boxNumber.length; i++){
+        console.log($boxNumber[i].value)
+        if($boxNumber[i].value == randomNum){
+          return $boxNumber[i];
+        }
+      }
     }
   }
 }
 </script>
 <style>
+
+
+  .pick4{width:1030px;display: inline-block;}
+  #header-game h5,h2,h1,h3 p{margin: 0px;}
 
   :root{
     --color-game:#ff4a11;
@@ -235,11 +288,28 @@ export default {
     --fullwidth: 100%
   }
 
-  .ticket { width: 120px; margin: 3px; vertical-align: top; display: inline-block; border-radius: 2px; border: 1px solid var(--line-color-gray);}
-  #summary-game { width: 400px; margin: 3px; vertical-align: top; display: inline-block; border-radius: 2px; border: 1px solid var(--line-color-gray);}
+  .image-random{
+    background-image: url("../../assets/games/random.svg");
+    background-repeat:no-repeat;
+    background-position:center;
+    height:20px;
+    width:20px;
+    background-size: 20px;
+    float: right;
+    padding-right:20px;
+    cursor: pointer;
+  }
 
-  .game { padding: 12px; width: 100px;}
-  .game label span { text-align:center; font-size: 15px; display:block; width: 24px; height: 24px; padding-top: 1px;}
+  .id-game{font-weight: bold;text-align: left;padding-left: 9px;padding-bottom: 9px;}
+  .custom-button{background-color: var(--color-game); color: #fff; padding: 6px 24px 6px 24px;border-radius: 3px;font-size: 14px;font-weight: bold;cursor: pointer;}
+
+  #header-game {display: inline-grid;grid-template-columns: auto auto auto auto;}
+  #header-game div{margin:8px;}
+
+  .ticket { width: 218px; margin: 3px; vertical-align: top; display: inline-block; border-radius: 2px; border: 1px solid var(--line-color-gray);}
+
+  .game { padding: 12px;}
+  .game label span { text-align:center; font-size: 15px; display:block; width: 24px; height: 24px;}
   .game label input { position:absolute; top:-20px; display: none; }
   .game input:checked + span {border-radius: 13px; background-color: var(--color-game); color: #fff; }
   .game .box {cursor: pointer; background-color:#fff; margin: 3px; border-radius: 2px;float: left;}

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import PlayPick4 from '../views/PlayPick4.vue'
+import PlayPick4 from '../views/games/PlayPick4.vue'
 
 Vue.use(VueRouter)
 
