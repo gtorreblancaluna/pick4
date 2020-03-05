@@ -254,11 +254,11 @@ export default {
           i++;
         }
       }
-      this.addClassDisabled($game);
+      this.addClassDisabledWhenNotCheckedBox($game);
     },
-    addClassDisabled : function($game){
+    addClassDisabledWhenNotCheckedBox : function($game){
       let array = $game.querySelectorAll('input[name="number"]');
-      array.forEach(function (value,index) {
+      array.forEach(function (value) {
         if(!value.checked){
           value.closest('label.box').classList.add('disabled');
         }
