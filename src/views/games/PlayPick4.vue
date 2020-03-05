@@ -20,133 +20,162 @@
 
     <div class="ticket">
         <div class="game">
-          <div class="id-game">A<div class="image-random" @click="randomGame($event)"></div></div>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="1"> <span>1</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="2"> <span>2</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="3"> <span>3</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="4"> <span>4</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="5"> <span>5</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="6"> <span>6</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="7"> <span>7</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="8"> <span>8</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="9"> <span>9</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="10"> <span>10</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="11"> <span>11</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="12"> <span>12</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="13"> <span>13</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="14"> <span>14</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="15"> <span>15</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="16"> <span>16</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="17"> <span>17</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="18"> <span>18</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="19"> <span>19</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="20"> <span>20</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="21"> <span>21</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="22"> <span>22</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="23"> <span>23</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="24"> <span>24</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="25"> <span>25</span></label>
-          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="26"> <span>26</span></label>
-          <a href="javascript:void(0)" class="clean-game" @click="cleanGame($event)">Limpiar</a>
-        </div>
+          <div style="display: flex;">
+            <div class="game-id" >A</div>
+            <div class="image-random" @click="randomGame($event)"></div>
+          </div>
+          <div style="display: inline-block;">
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="1"> <span>1</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="2"> <span>2</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="3"> <span>3</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="4"> <span>4</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="5"> <span>5</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="6"> <span>6</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="7"> <span>7</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="8"> <span>8</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="9"> <span>9</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="10"> <span>10</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="11"> <span>11</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="12"> <span>12</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="13"> <span>13</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="14"> <span>14</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="15"> <span>15</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="16"> <span>16</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="17"> <span>17</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="18"> <span>18</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="19"> <span>19</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="20"> <span>20</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="21"> <span>21</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="22"> <span>22</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="23"> <span>23</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="24"> <span>24</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="25"> <span>25</span></label>
+            <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketOne" name="number" value="26"> <span>26</span></label>
+          </div>
+          <div>
+            <img class="clean-game" @click="cleanGame($event)" src="../../assets/games/trashGray.svg">
+          </div>
+        </div> <!-- end game -->
+
     </div>
 <!--    end ticket-->
     <div class="ticket">
       <div class="game">
-        <div class="id-game">B<div class="image-random" @click="randomGame($event)"></div></div>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="1"> <span>1</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="2"> <span>2</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="3"> <span>3</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="4"> <span>4</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="5"> <span>5</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="6"> <span>6</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="7"> <span>7</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="8"> <span>8</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="9"> <span>9</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="10"> <span>10</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="11"> <span>11</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="12"> <span>12</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="13"> <span>13</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="14"> <span>14</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="15"> <span>15</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="16"> <span>16</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="17"> <span>17</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="18"> <span>18</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="19"> <span>19</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="20"> <span>20</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="21"> <span>21</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="22"> <span>22</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="23"> <span>23</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="24"> <span>24</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="25"> <span>25</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="26"> <span>26</span></label>
-        <a href="javascript:void(0)" class="clean-game" @click="cleanGame($event)">Limpiar</a>
+        <div style="display: flex;">
+          <div class="game-id" >B</div>
+          <div class="image-random" @click="randomGame($event)"></div>
+        </div>
+        <div style="display: inline-block;">
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="1"> <span>1</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="2"> <span>2</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="3"> <span>3</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="4"> <span>4</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="5"> <span>5</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="6"> <span>6</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="7"> <span>7</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="8"> <span>8</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="9"> <span>9</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="10"> <span>10</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="11"> <span>11</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="12"> <span>12</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="13"> <span>13</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="14"> <span>14</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="15"> <span>15</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="16"> <span>16</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="17"> <span>17</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="18"> <span>18</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="19"> <span>19</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="20"> <span>20</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="21"> <span>21</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="22"> <span>22</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="23"> <span>23</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="24"> <span>24</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="25"> <span>25</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketTwo" name="number" value="26"> <span>26</span></label>
+        </div>
+        <div>
+          <img class="clean-game" @click="cleanGame($event)" src="../../assets/games/trashGray.svg">
+        </div>
       </div>
     </div>
 <!--    end ticket-->
     <div class="ticket">
       <div class="game">
-        <div class="id-game">C<div class="image-random" @click="randomGame($event)"></div></div>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="1"> <span>1</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="2"> <span>2</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="3"> <span>3</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="4"> <span>4</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="5"> <span>5</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="6"> <span>6</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="7"> <span>7</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="8"> <span>8</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="9"> <span>9</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="10"> <span>10</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="11"> <span>11</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="12"> <span>12</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="13"> <span>13</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="14"> <span>14</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="15"> <span>15</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="16"> <span>16</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="17"> <span>17</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="18"> <span>18</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="19"> <span>19</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="20"> <span>20</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="21"> <span>21</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="22"> <span>22</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="23"> <span>23</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="24"> <span>24</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="25"> <span>25</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="26"> <span>26</span></label>
-        <a href="javascript:void(0)" class="clean-game" @click="cleanGame($event)">Limpiar</a>
+        <div style="display: flex;">
+          <div class="game-id" >C</div>
+          <div class="image-random" @click="randomGame($event)"></div>
+        </div>
+        <div style="display: inline-block;">
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="1"> <span>1</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="2"> <span>2</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="3"> <span>3</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="4"> <span>4</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="5"> <span>5</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="6"> <span>6</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="7"> <span>7</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="8"> <span>8</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="9"> <span>9</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="10"> <span>10</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="11"> <span>11</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="12"> <span>12</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="13"> <span>13</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="14"> <span>14</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="15"> <span>15</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="16"> <span>16</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="17"> <span>17</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="18"> <span>18</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="19"> <span>19</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="20"> <span>20</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="21"> <span>21</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="22"> <span>22</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="23"> <span>23</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="24"> <span>24</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="25"> <span>25</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketThree" name="number" value="26"> <span>26</span></label>
+        </div>
+        <div>
+          <img class="clean-game" @click="cleanGame($event)" src="../../assets/games/trashGray.svg">
+        </div>
       </div>
     </div>
     <!--    end ticket-->
     <div class="ticket">
       <div class="game">
-        <div class="id-game">D<div class="image-random" @click="randomGame($event)"></div></div>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="1"> <span>1</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="2"> <span>2</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="3"> <span>3</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="4"> <span>4</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="5"> <span>5</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="6"> <span>6</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="7"> <span>7</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="8"> <span>8</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="9"> <span>9</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="10"> <span>10</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="11"> <span>11</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="12"> <span>12</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="13"> <span>13</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="14"> <span>14</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="15"> <span>15</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="16"> <span>16</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="17"> <span>17</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="18"> <span>18</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="19"> <span>19</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="20"> <span>20</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="21"> <span>21</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="22"> <span>22</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="23"> <span>23</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="24"> <span>24</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="25"> <span>25</span></label>
-        <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="26"> <span>26</span></label>
-        <a href="javascript:void(0)" class="clean-game" @click="cleanGame($event)">Limpiar</a>
+        <div style="display: flex;">
+          <div class="game-id" >D</div>
+          <div class="image-random" @click="randomGame($event)"></div>
+        </div>
+        <div style="display: inline-block;">
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="1"> <span>1</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="2"> <span>2</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="3"> <span>3</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="4"> <span>4</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="5"> <span>5</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="6"> <span>6</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="7"> <span>7</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="8"> <span>8</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="9"> <span>9</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="10"> <span>10</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="11"> <span>11</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="12"> <span>12</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="13"> <span>13</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="14"> <span>14</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="15"> <span>15</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="16"> <span>16</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="17"> <span>17</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="18"> <span>18</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="19"> <span>19</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="20"> <span>20</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="21"> <span>21</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="22"> <span>22</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="23"> <span>23</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="24"> <span>24</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="25"> <span>25</span></label>
+          <label class="box"> <input type="checkbox" @click="checkMax($event)" v-model="ticketFour" name="number" value="26"> <span>26</span></label>
+        </div>
+        <div>
+          <img class="clean-game" @click="cleanGame($event)" src="../../assets/games/trashGray.svg">
+        </div>
       </div>
     </div>
     <!--    end ticket-->
@@ -236,10 +265,10 @@ export default {
       })
     },
     payGame : function () {
-      alert("ready to pay game")
+      alert(this.getGameToBuy());
+
     },
     randomGame : function (event) {
-      console.log("in random game")
       let $game = event.currentTarget.closest('.game');
       this.cleanGame(event);
       let min = 1, max = this.maxNumber, i = 0;
@@ -255,23 +284,53 @@ export default {
         }
       }
       this.addClassDisabledWhenNotCheckedBox($game);
+      this.getGame($game);
     },
     addClassDisabledWhenNotCheckedBox : function($game){
-      let array = $game.querySelectorAll('input[name="number"]');
+      let array = $game.querySelectorAll('input[name="number"]:not( :checked )');
       array.forEach(function (value) {
-        if(!value.checked){
           value.closest('label.box').classList.add('disabled');
-        }
-
       })
     },
     getBoxByValue : function ($boxNumber,randomNum) {
       for(let i = 0 ; i<$boxNumber.length; i++){
-        console.log($boxNumber[i].value)
         if($boxNumber[i].value == randomNum){
           return $boxNumber[i];
         }
       }
+    },
+    getGame : function ($game){
+      let game = {};
+      game.id = $game.getElementsByClassName("game-id")[0].innerHTML;
+      let $numbers = $game.querySelectorAll( 'input[name="number"]:checked' );
+      if($numbers.length == this.maxCombination ){
+        let combination = [];
+        $numbers.forEach(function (box) {
+          combination.push(box.value);
+        })
+        combination.sort( function(a, b) { return a - b; } );
+        game.completeCombination = true;
+        game.combination = combination.join( ',' );
+      }else{
+        game.completeCombination = false;
+      }
+      console.log(game);
+      return game;
+
+    },
+    getGameToBuy : function (){
+      let games = [];
+        try{
+        let arrayGames = document.getElementsByClassName('game');
+        for(let i = 0 ; i < arrayGames.length ; i++ ){
+          games.push(this.getGame(arrayGames[i]));
+        }
+        console.log(games);
+      }catch(e){
+        console.error(e)
+      }
+      return games;
+
     }
   }
 }
@@ -288,6 +347,7 @@ export default {
     --fullwidth: 100%
   }
 
+  #content-game{display: inline-grid;grid-template-columns: auto auto auto auto;}
   .image-random{
     background-image: url("../../assets/games/random.svg");
     background-repeat:no-repeat;
@@ -298,15 +358,16 @@ export default {
     float: right;
     padding-right:20px;
     cursor: pointer;
+    width: 50%;
   }
 
-  .id-game{font-weight: bold;text-align: left;padding-left: 9px;padding-bottom: 9px;}
+  .game-id{font-weight: bold;text-align: left;padding-left: 9px;padding-bottom: 9px;width: 50%}
   .custom-button{background-color: var(--color-game); color: #fff; padding: 6px 24px 6px 24px;border-radius: 3px;font-size: 14px;font-weight: bold;cursor: pointer;}
 
   #header-game {display: inline-grid;grid-template-columns: auto auto auto auto;}
   #header-game div{margin:8px;}
 
-  .ticket { width: 218px; margin: 3px; vertical-align: top; display: inline-block; border-radius: 2px; border: 1px solid var(--line-color-gray);}
+  .ticket { width: 218px; margin: 3px; vertical-align: top; border-radius: 2px; border: 1px solid var(--line-color-gray);}
 
   .game { padding: 12px;}
   .game label span { text-align:center; font-size: 15px; display:block; width: 24px; height: 24px;}
@@ -317,6 +378,6 @@ export default {
   .game .disabled { cursor:default; background-color: transparent; border-radius: 14px;}
   .game .disabled span{ color: #b9b9b9;}
 
-  .clean-game{text-decoration:none;color: #000;}
+  .clean-game{width: 21px;cursor: pointer;}
 
 </style>
