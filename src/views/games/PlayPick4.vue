@@ -9,7 +9,7 @@
         <h5>BOLSA ACUMULADA</h5>
       </div>
       <div>
-        <span>TOTAL: <span id="total-game"></span></span>
+        <span>TOTAL: <span id="total-game">$0.00</span></span>
       </div>
       <div>
         <span class="custom-button" @click="payGame">PAGAR CON CE</span>
@@ -55,6 +55,11 @@
           <div>
             <img class="clean-game" @click="cleanGame($event)" src="../../assets/games/trashGray.svg">
           </div>
+          <div>
+            <div class="ticket-total">
+              COSTO: $<span class="total">0.00</span>
+            </div>
+          </div>
         </div> <!-- end game -->
 
     </div>
@@ -96,6 +101,11 @@
         <div>
           <img class="clean-game" @click="cleanGame($event)" src="../../assets/games/trashGray.svg">
         </div>
+        <div>
+          <div class="ticket-total">
+            COSTO: $<span class="total">0.00</span>
+          </div>
+        </div>
       </div>
     </div>
 <!--    end ticket-->
@@ -136,6 +146,11 @@
         <div>
           <img class="clean-game" @click="cleanGame($event)" src="../../assets/games/trashGray.svg">
         </div>
+        <div>
+          <div class="ticket-total">
+            COSTO: $<span class="total">0.00</span>
+          </div>
+        </div>
       </div>
     </div>
     <!--    end ticket-->
@@ -175,6 +190,11 @@
         </div>
         <div>
           <img class="clean-game" @click="cleanGame($event)" src="../../assets/games/trashGray.svg">
+        </div>
+        <div>
+          <div class="ticket-total">
+            COSTO: $<span class="total">0.00</span>
+          </div>
         </div>
       </div>
     </div>
@@ -245,6 +265,8 @@ export default {
       }else if ( numOfChecked == this.maxCombination){
         this.enabledOrDisabled($game,false);
       }
+
+      this.calculateAmounts();
     },
     enabledOrDisabled : function ($game,enabled) {
       let array = $game.querySelectorAll('input[name="number"]:not( :checked )');
@@ -263,6 +285,7 @@ export default {
         value.checked = false;
         value.closest('label.box').classList.remove('disabled');
       })
+      this.calculateAmounts();
     },
     payGame : function () {
       alert(this.getGameToBuy());
@@ -284,7 +307,8 @@ export default {
         }
       }
       this.addClassDisabledWhenNotCheckedBox($game);
-      this.getGame($game);
+      // this.getGame($game);
+      this.calculateAmounts();
     },
     addClassDisabledWhenNotCheckedBox : function($game){
       let array = $game.querySelectorAll('input[name="number"]:not( :checked )');
@@ -331,6 +355,31 @@ export default {
       }
       return games;
 
+    },
+    calculateAmounts : function () {
+      let games = this.getGameToBuy();
+      let totalGame = 0.00;
+      for(let i = 0 ; i < games.length ; i++ ){
+        let $game = this.getGameById(games[i].id);
+        if(games[i].completeCombination){
+          let cost = this.data.costPerTicket.toFixed(2);
+          $game.getElementsByClassName("total")[0].innerHTML = cost;
+          totalGame = totalGame + parseFloat(cost);
+        }else{
+          $game.getElementsByClassName("total")[0].innerHTML = "0.00";
+          totalGame = totalGame + parseFloat(0);
+        }
+      }
+      document.getElementById("total-game").innerText = "$"+totalGame.toFixed(2);
+    },
+    getGameById : function (gameId) {
+      let arrayGames = document.getElementsByClassName('game');
+      for(let i = 0 ; i < arrayGames.length ; i++ ){
+        let id = arrayGames[i].getElementsByClassName("game-id")[0].innerHTML;
+        if(id == gameId){
+          return arrayGames[i];
+        }
+      }
     }
   }
 }
@@ -379,5 +428,7 @@ export default {
   .game .disabled span{ color: #b9b9b9;}
 
   .clean-game{width: 21px;cursor: pointer;}
+  .ticket-total{text-align: right;margin: 10px;font-size: 14px;font-weight: 900;}
+  #total-game{font-weight: bold;}
 
 </style>
